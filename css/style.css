@@ -9,6 +9,7 @@ html, body {
 body {
     background-image: url('../stock/img/Fond.png');
     background-attachment:fixed;
+    background-size:cover;
     position: absolute;
     left: 0;
     top: 0;

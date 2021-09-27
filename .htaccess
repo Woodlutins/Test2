@@ -2,7 +2,7 @@ Options +FollowSymlinks
 #on active la réecriture d'URL
 RewriteEngine on
 
-RewriteBase /TEST/
+RewriteBase /test2/
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l

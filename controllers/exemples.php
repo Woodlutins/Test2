@@ -22,5 +22,13 @@ class exemples extends controller
 	$this->set($d);
 	$this->render('tableauform');
 }
+function tableauformSubmit(){
+
+	
+	$d["champs"]=$this->objet->champs('exemple');
+	$d["Exem"]=$this->objet->getAllTable('exemple',"1=1");
+	$this->set($d);
+	$this->render('tableau');
+}
 }
 ?>
