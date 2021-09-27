@@ -1,0 +1,11 @@
+Options +FollowSymlinks
+#on active la réecriture d'URL
+RewriteEngine on
+
+RewriteBase /TEST/
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+#On prend tout et on le redirige vers index.php
+#p sera la page appelée
+RewriteRule ^([a-zA-Z0-9\-\_\/].*)$ index.php?p=$1

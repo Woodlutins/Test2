@@ -1,0 +1,26 @@
+html{
+    overflow: hidden;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+
+}
+body {
+    background-image: url('../stock/img/Fond.png');
+    background-attachment:fixed;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: -30px;
+    bottom: 0;
+    padding-right: 15px;
+    overflow-y: scroll;
+  }
+nav {
+position: fixed;
+width: 100%;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
