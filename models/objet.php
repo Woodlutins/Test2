@@ -2,8 +2,7 @@
 class objet extends Model
 {
 	var $Table="Objet";
-	function getAll()
-	{
+	function getAll(){
 		return $this->find(
 		array
 			(
@@ -11,8 +10,7 @@ class objet extends Model
 			)
 		);
 	}
-	function getAllTable($table,$condition)
-	{
+	function getAllTable($table,$condition="1=1"){
 		return $this->find(
 		array
 			(
@@ -21,8 +19,7 @@ class objet extends Model
 			)
 		);
 	}
-	function getOneTable($id,$table)
-	{
+	function getOneTable($id,$table){
 		$idCo="Id".$table;
 		return $this->findfirst(
 		array
@@ -32,30 +29,26 @@ class objet extends Model
 			)
 		);
 	}
-	function getCount($id,$table,$condition)
-	{
+	function getCount($id,$table,$condition="1=1"){
 		return $this->find(array(
 		'table'=>$table,
 		'fields'=>'count(*) as NbEl',
 		'condition'=>$condition,)
 		);
 	}
-	function view($id,$table)
-	{
+	function view($id,$table){
 		$idCo="Id".$table;
 		return $this->findFirst(array(
 		'condition'=>$idCo.'='.$id,
 		'table'=>$table)
 		);
 	}
-	function champs($table)
-	{
+	function champs($table){
 		return $this->tableName(array(
 		'table'=>$table)
 		);
 	}
-	function getLibCE($id,$table)
-	{
+	function getLibCE($id,$table){
 		$idCo="Id".$table;
 		return $this->findFirst(array(
 		'condition'=>$idCo.'='.$id,
@@ -63,22 +56,19 @@ class objet extends Model
 		'fields'=>'Libelle')
 		);
 	}
-	function getLibsCE($table)
-	{
+	function getLibsCE($table){
 		return $this->find(array(
 		'table'=>$table)
 		);
 	}
-	function delObjet($id,$table)
-	{
+	function delObjet($id,$table){
 		$idCo="Id".$table;
 		return $this->del(array(
 		'condition'=>$idCo.'='.$id,
 		'table'=>$table)
 		);
 	}
-	function modifObjet($id,$table,$fields)
-	{
+	function modifObjet($id,$table,$fields){
 		$idCo="Id".$table;
 		return $this->transform(array(
 		'fields'=>$fields,
@@ -86,20 +76,12 @@ class objet extends Model
 		'table'=>$table)
 		);
 	}
-	function ajoutObjet($table,$fields,$values)
-	{
+	function ajoutObjet($table,$fields,$values){
 		return $this->create(array(
 		'fields'=>$fields,
 		'values'=>$values,
 		'table'=>$table)
 		);
-	}
-	function rechercheTable($table,$condition)
-	{
-		return $this->find(array(
-			'condition'=>$condition,
-			'table'=>$table,)
-			);
 	}
 }
 ?>

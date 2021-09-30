@@ -62,7 +62,6 @@ function arrowl(){
 }
 function clean(){
 		document.getElementById("red").innerHTML=""
-
 }
 function grow(){
 		page0();

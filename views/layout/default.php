@@ -66,7 +66,7 @@ var testT=0
 var blur=false
 function WindowOpen(box){
   if (test==0){
-    document.getElementById("scroll"+box).className="lg:bg-gray-400 lg:border-black lg:border-2 visible";
+    document.getElementById("scroll"+box).className="lg:bg-gray-400 lg:border-black lg:border-2 visible hover:text-black";
     test=box;
   }
   else if(test==box){
@@ -74,7 +74,7 @@ function WindowOpen(box){
     test=0;
   }
   else {
-    document.getElementById("scroll"+box).className="lg:bg-gray-400 lg:border-black lg:border-2 visible";
+    document.getElementById("scroll"+box).className="lg:bg-gray-400 lg:border-black lg:border-2 visible hover:text-black";
     document.getElementById("scroll"+test).className="hidden";
     test=box;
   }

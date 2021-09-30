@@ -24,7 +24,7 @@ class exemples extends controller
 }
 function tableauformModif($id){
 	$d["champs"]=$this->objet->champs('exemple');
-	$d["action"]="Ajout";
+	$d["action"]="Modif";
 	foreach ($d["champs"] as $unChamps) {
 		if ($unChamps->COLUMN_KEY=="MUL")
 		{
@@ -36,25 +36,44 @@ function tableauformModif($id){
 	$this->set($d);
 	$this->render('tableauform');
 }
+function tableauformSupp($id){
+	$this->objet->delObjet($id,"Exemple");
+	$d["champs"]=$this->objet->champs('exemple');
+	$d["Exem"]=$this->objet->getAllTable('exemple',"1=1");
+	$this->set($d);
+	$this->render('tableau');
+}
 
-function tableauformSubmit(){
+function tableauformSubmit($action){
 	$values="";
 	$fields="";
 	$d["champs"]=$this->objet->champs('exemple');
 	foreach ($d["champs"] as $unChamps) {
 		$Name=$unChamps->COLUMN_NAME;
-		if ($unChamps->COLUMN_KEY!="PRI" and $unChamps->EXTRA!="auto_increment"){
-			echo $_POST[$Name]."<br>";
-			$values=$values."'".$_POST[$Name]."',";
-			$fields=$fields.$Name.",";
+		if ($action=="Modif"){
+			if ($unChamps->COLUMN_KEY=="PRI" and $unChamps->EXTRA=="auto_increment"){
+				$id=$_POST[$Name];
+			}
+			$fields=$fields.$Name."='".$_POST[$Name]."',";
 		}
-	}
+		else{
+			if ($unChamps->COLUMN_KEY!="PRI" and $unChamps->EXTRA!="auto_increment"){
+				$values=$values."'".$_POST[$Name]."',";
+				$fields=$fields.$Name.",";
+				}
+			}
+		}
 	$fields=substr($fields,0,-1);
 	$values=substr($values,0,-1);
-	$this->objet->ajoutObjet("exemple",$fields,$values);
+	if ($action=="Modif"){
+		$this->objet->modifObjet($id,"exemple",$fields);
+	}
+	else{
+		$this->objet->ajoutObjet("exemple",$fields,$values);
+	}
 	$d["Exem"]=$this->objet->getAllTable('exemple',"1=1");
 	$this->set($d);
 	$this->render('tableau');
-}
+	}
 }
 ?>

@@ -3,7 +3,7 @@ $d=array();
  ?>
  <div class="h-16 lg:h-32"></div>
  <div class="flex flex-col place-items-center justify-center w-11/12 lg:w-3/4">
-<table class="border-collapse table-auto">
+<table class="border-collapse table-auto w-full">
   <thead class="border-2 bg-black bg-opacity-25">
     <tr>
       <?php
@@ -44,7 +44,7 @@ $d=array();
           echo "</th>";
         }
         }
-        echo '<th><a href="/'.WEBROOT2.'/exemples/tableauformModif/'.$unEx->IdExemple.'"><i class="fas fa-pen"></i></a> <i class="fas fa-trash"></i></th></tr>';
+        echo '<th><a href="/'.WEBROOT2.'/exemples/tableauformModif/'.$unEx->IdExemple.'"><i class="fas fa-pen"></i></a> <a href="/'.WEBROOT2.'/exemples/tableauformSupp/'.$unEx->IdExemple.'" onclick="return confirm(`Voulez vous vraiment supprimer cette ligne?`);"><i class="fas fa-trash"></i></a></th></tr>';
       }
      ?>
 <tr class='border bg-white bg-opacity-0 hover:bg-opacity-50' onclick="window.location.href ='/<?php echo WEBROOT2?>/exemples/tableauformAjout';" ><th colspan="50"><i class="fas fa-plus"></i></th></tr>
