@@ -54,5 +54,4 @@ switch (img)
   clearTimeout(chg)
   chg = setTimeout(arrowr,6000);
 }
-
 </script>

@@ -52,13 +52,11 @@
       <a class="h-full text-xl hover:text-black lg:hidden" onclick="Scroll()"><i class="fas fa-bars"></i></a>
     </span>
 </nav>
-  <div class="w-screen flex flex-col place-items-center">
+  <div class="w-screen flex flex-col place-items-center bg-gradient-to-b from-blue-600 to-blue-900">
 		<?php
-			echo $this->Session->flash();
-
-		    echo $content_for_layout;
-	?>
-</div>
+      echo $content_for_layout;
+	   ?>
+  </div>
 </body>
 <script>
 var test=false
@@ -96,7 +94,7 @@ document.addEventListener('keyup', function(event)
     blur=true;
   }
   else if (event.key=="b"){
-    document.getElementById("body").className="";
+    document.getElementById("body").className="text-white";
     blur=false;
   }
 })

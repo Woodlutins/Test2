@@ -51,7 +51,7 @@ foreach ($champs as$unChamps){
                     echo "selected";
                   }
                 }
-                echo ">".$unEt->Libelle."</option>";
+                echo ">".$unEt->$Et."-".$unEt->Libelle."</option>";
               }
               echo "</select>";
           }

@@ -113,7 +113,6 @@ class Model
 		{
 			$table=$data["table"];
 		}
-
 		$sql="select DISTINCT COLUMN_NAME ,DATA_TYPE, IS_NULLABLE,COLUMN_KEY, EXTRA, ORDINAL_POSITION from INFORMATION_SCHEMA.COLUMNS where table_name ='".$table."' and table_schema='".$this->dbName."'";
 		//echo $sql;
 		$stmt=$this->db->prepare($sql);

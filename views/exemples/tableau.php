@@ -1,8 +1,7 @@
 <?php
 $d=array();
  ?>
- <div class="h-16 lg:h-32"></div>
- <div class="flex flex-col place-items-center justify-center w-11/12 lg:w-3/4">
+ <div class="flex flex-col place-items-center justify-center w-11/12 lg:w-3/4 h-screen">
 <table class="border-collapse table-auto w-full">
   <thead class="border-2 bg-black bg-opacity-25">
     <tr>
@@ -10,8 +9,8 @@ $d=array();
         foreach ($champs as $unChamps)
         {
           if ($unChamps->COLUMN_KEY!="PRI"){
-          echo "<th>".$unChamps->COLUMN_NAME."</th>";
-        }
+            echo "<th>".$unChamps->COLUMN_NAME."</th>";
+          }
         }
        ?>
        <th>Action</th>
@@ -24,24 +23,32 @@ $d=array();
         foreach ($champs as $unChamps) {
           $data=$unChamps->COLUMN_NAME;
           if ($unChamps->COLUMN_KEY!="PRI"){
-          echo "<th class='border'>";
-          switch ($unChamps->DATA_TYPE) {
-            case 'int':
-            case 'varchar':
-            case 'date':
-              echo $unEx->$data;
-              break;
-            case 'tinyint':
-              if ($unEx->$data==1)
-              {
-                echo '<i class="fas fa-check"></i>';
-              }
-              break;
-            default:
-                echo "Beep Beep Boop Boop";
-              break;
-          }
-          echo "</th>";
+            echo "<th class='border'>";
+            switch ($unChamps->DATA_TYPE) {
+              case 'int':
+                if ($unChamps->COLUMN_KEY=="MUL"){
+                  foreach ($$data as $unEt){
+                    if ($unEx->$data==$unEt->$data){
+                      echo $unEt->$data."-".$unEt->Libelle;
+                    }
+                  }
+                  break;
+                }
+              case 'varchar':
+              case 'date':
+                echo $unEx->$data;
+                break;
+              case 'tinyint':
+                if ($unEx->$data==1)
+                {
+                  echo '<i class="fas fa-check"></i>';
+                }
+                break;
+              default:
+                  echo "Beep Beep Boop Boop";
+                break;
+            }
+            echo "</th>";
         }
         }
         echo '<th><a href="/'.WEBROOT2.'/exemples/tableauformModif/'.$unEx->IdExemple.'"><i class="fas fa-pen"></i></a> <a href="/'.WEBROOT2.'/exemples/tableauformSupp/'.$unEx->IdExemple.'" onclick="return confirm(`Voulez vous vraiment supprimer cette ligne?`);"><i class="fas fa-trash"></i></a></th></tr>';

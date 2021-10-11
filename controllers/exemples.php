@@ -5,6 +5,13 @@ class exemples extends controller
 	function tableau()
 	{
 		$d["champs"]=$this->objet->champs('exemple');
+		foreach ($d["champs"] as $unChamps) {
+			if ($unChamps->COLUMN_KEY=="MUL")
+			{
+				$table=substr($unChamps->COLUMN_NAME,2);
+				$d[$unChamps->COLUMN_NAME]=$this->objet->getAllTable($table,"1=1");
+			}
+		}
 		$d["Exem"]=$this->objet->getAllTable('exemple',"1=1");
 		$this->set($d);
 		$this->render('tableau');
@@ -39,6 +46,13 @@ function tableauformModif($id){
 function tableauformSupp($id){
 	$this->objet->delObjet($id,"Exemple");
 	$d["champs"]=$this->objet->champs('exemple');
+	foreach ($d["champs"] as $unChamps) {
+		if ($unChamps->COLUMN_KEY=="MUL")
+		{
+			$table=substr($unChamps->COLUMN_NAME,2);
+			$d[$unChamps->COLUMN_NAME]=$this->objet->getAllTable($table,"1=1");
+		}
+	}
 	$d["Exem"]=$this->objet->getAllTable('exemple',"1=1");
 	$this->set($d);
 	$this->render('tableau');
@@ -70,6 +84,13 @@ function tableauformSubmit($action){
 	}
 	else{
 		$this->objet->ajoutObjet("exemple",$fields,$values);
+	}
+	foreach ($d["champs"] as $unChamps) {
+		if ($unChamps->COLUMN_KEY=="MUL")
+		{
+			$table=substr($unChamps->COLUMN_NAME,2);
+			$d[$unChamps->COLUMN_NAME]=$this->objet->getAllTable($table,"1=1");
+		}
 	}
 	$d["Exem"]=$this->objet->getAllTable('exemple',"1=1");
 	$this->set($d);
