@@ -52,7 +52,7 @@
       <a class="h-full text-xl hover:text-black lg:hidden" onclick="Scroll()"><i class="fas fa-bars"></i></a>
     </span>
 </nav>
-  <div class="w-screen flex flex-col place-items-center bg-gradient-to-b from-blue-600 to-blue-900">
+  <div class="w-screen flex flex-col place-items-center bg-gradient-to-b from-blue-600 to-black lg:from-blue-500 lg:to-black">
 		<?php
       echo $content_for_layout;
 	   ?>

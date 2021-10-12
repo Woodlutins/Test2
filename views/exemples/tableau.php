@@ -1,7 +1,7 @@
 <?php
 $d=array();
  ?>
- <div class="flex flex-col place-items-center justify-center w-11/12 lg:w-3/4 h-screen">
+ <div class="flex flex-col place-items-center justify-center w-11/12 lg:w-3/4 h-screen text-xs lg:text-xl">
 <table class="border-collapse table-auto w-full">
   <thead class="border-2 bg-black bg-opacity-25">
     <tr>
@@ -19,7 +19,7 @@ $d=array();
   <tbody class="border">
     <?php
       foreach ($Exem as $unEx) {
-        echo "<tr class='border bg-white bg-opacity-0 hover:bg-opacity-25'>";
+        echo "<tr class='border bg-white bg-opacity-0 cursor-pointer hover:bg-opacity-25' onclick='window.location.href =`/".WEBROOT2."/exemples/index/".$unEx->IdExemple."`;'>";
         foreach ($champs as $unChamps) {
           $data=$unChamps->COLUMN_NAME;
           if ($unChamps->COLUMN_KEY!="PRI"){
@@ -54,7 +54,7 @@ $d=array();
         echo '<th><a href="/'.WEBROOT2.'/exemples/tableauformModif/'.$unEx->IdExemple.'"><i class="fas fa-pen"></i></a> <a href="/'.WEBROOT2.'/exemples/tableauformSupp/'.$unEx->IdExemple.'" onclick="return confirm(`Voulez vous vraiment supprimer cette ligne?`);"><i class="fas fa-trash"></i></a></th></tr>';
       }
      ?>
-<tr class='border bg-white bg-opacity-0 hover:bg-opacity-50' onclick="window.location.href ='/<?php echo WEBROOT2?>/exemples/tableauformAjout';" ><th colspan="50"><i class="fas fa-plus"></i></th></tr>
+<tr class='border bg-white bg-opacity-0 hover:bg-opacity-50 cursor-pointer' onclick="window.location.href ='/<?php echo WEBROOT2?>/exemples/tableauformAjout';" ><th colspan="50"><i class="fas fa-plus"></i></th></tr>
   </tbody>
 </table>
 </div>

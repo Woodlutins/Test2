@@ -2,8 +2,22 @@
 class exemples extends controller
 {
 	var $models = array("exemple","objet");
-	function tableau()
-	{
+	function index($id){
+		$d["champs"]=$this->objet->champs('exemple');
+		foreach ($d["champs"] as $unChamps) {
+			if ($unChamps->COLUMN_KEY=="MUL")
+			{
+				$table=substr($unChamps->COLUMN_NAME,2);
+				$d[$unChamps->COLUMN_NAME]=$this->objet->getAllTable($table,"1=1");
+			}
+		}
+		$d["Exem"]=$this->objet->getOneTable($id,"exemple");
+		$this->set($d);
+		$this->render('index');
+	}
+
+
+	function tableau(){
 		$d["champs"]=$this->objet->champs('exemple');
 		foreach ($d["champs"] as $unChamps) {
 			if ($unChamps->COLUMN_KEY=="MUL")
