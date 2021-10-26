@@ -6,7 +6,7 @@ foreach ($Users as $UnUs) {
 }
  ?>
  <div class="h-screen w-full flex flex-col justify-center place-items-center">
-<form id="form" class="transiton duration-100 flex flex-col justify-center font-mono place-items-center bg-white text-blue-500 w-11/12 lg:w-1/4 md:w-1/2 rounded-3xl" action="/<?php echo WEBROOT2?>/users/create2" method="POST">
+<form id="form" class="transiton duration-100 flex flex-col justify-center font-mono place-items-center bg-white text-blue-500 w-11/12 lg:w-1/3 md:w-1/2 sm:w-2/3 rounded-3xl" action="/<?php echo WEBROOT2?>/users/create2" method="POST">
 	<p class="h-10"></p>
 	<p class="text-2xl">Création compte </p>
 	<p id="showUser" class="h-10 text-xl text-blue-600"></p>

@@ -43,6 +43,9 @@ $d=array();
                 {
                   echo '<i class="fas fa-check"></i>';
                 }
+                else {
+                  echo '<i class="fas fa-times"></i>';
+                }
                 break;
               default:
                   echo "Beep Beep Boop Boop";

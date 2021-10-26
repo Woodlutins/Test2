@@ -2,6 +2,7 @@
 class objet extends Model
 {
 	var $Table="Objet";
+
 	function getAll(){
 		return $this->find(
 		array
@@ -45,19 +46,6 @@ class objet extends Model
 	}
 	function champs($table){
 		return $this->tableName(array(
-		'table'=>$table)
-		);
-	}
-	function getLibCE($id,$table){
-		$idCo="Id".$table;
-		return $this->findFirst(array(
-		'condition'=>$idCo.'='.$id,
-		'table'=>$table,
-		'fields'=>'Libelle')
-		);
-	}
-	function getLibsCE($table){
-		return $this->find(array(
 		'table'=>$table)
 		);
 	}
