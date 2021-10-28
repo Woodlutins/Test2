@@ -21,14 +21,18 @@
   <li class="hidden flex-1 lg:flex"><a class="hover:text-black text-2xl" href="/<?php echo WEBROOT2?>/accueil"><i class="fas fa-home"></i></a></li>
     <li class="flex-1"><a class="hover:text-black cursor-pointer" onclick="WindowOpen('2')">LINK 2 <i class="fas fa-sort-down"></i></a>
       <div id="scroll2" class="hidden">
-        <a href="/<?php echo WEBROOT2?>/exemples/tableau">Exemple de Tableau</a>
+        <a href="/<?php echo WEBROOT2?>/exemples/tableau">Exemple de Tableau</a><br>
       </div>
     </li>
     <li class="flex-1"><a class="hover:text-black cursor-pointer" onclick="WindowOpen('3')">LINK 3 <i class="fas fa-sort-down"></i></a>
-      <div id="scroll3" class="hidden">3</div>
+      <div id="scroll3" class="hidden">
+        <a href="/<?php echo WEBROOT2?>/exemples/style">SuperTest</a>
+      </div>
     </li>
     <li class="flex-1"><a class="hover:text-black cursor-pointer" onclick="WindowOpen('4')">LINK 4 <i class="fas fa-sort-down"></i></a>
-      <div id="scroll4" class="hidden">4</div>
+      <div id="scroll4" class="hidden">
+          <a href="/<?php echo WEBROOT2?>/exemples/wheel">Roue de la fortune</a>
+      </div>
     </li>
     <li class="flex-1"><a class="hover:text-black cursor-pointer" onclick="WindowOpen('5')">LINK 5 <i class="fas fa-sort-down"></i></a>
       <div id="scroll5" class="hidden">5</div>
@@ -98,4 +102,7 @@ document.addEventListener('keyup', function(event)
     blur=false;
   }
 })
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 </script>
