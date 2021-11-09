@@ -111,13 +111,14 @@ function tableauformSubmit($action){
 	$this->set($d);
 	$this->render('tableau');
 	}
-
 	function style(){
 		$this->render('style');
 	}
 	function wheel(){
 		$this->render('wheel');
 	}
+	function test(){
+		$this->render('test');
+	}
 }
-
 ?>

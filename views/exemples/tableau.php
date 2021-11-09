@@ -1,7 +1,8 @@
 <?php
 $d=array();
  ?>
- <div class="flex flex-col place-items-center justify-center w-11/12 lg:w-3/4 h-screen text-xs lg:text-xl">
+ <div class="flex flex-col justify-center place-items-center h-screen">
+ <div class="w-11/12 lg:w-3/4 text-xs lg:text-xl">
 <table class="border-collapse table-auto w-full">
   <thead class="border-2 bg-black bg-opacity-25">
     <tr>
@@ -60,4 +61,5 @@ $d=array();
 <tr class='border bg-white bg-opacity-0 hover:bg-opacity-50 cursor-pointer' onclick="window.location.href ='/<?php echo WEBROOT2?>/exemples/tableauformAjout';" ><th colspan="50"><i class="fas fa-plus"></i></th></tr>
   </tbody>
 </table>
+</div>
 </div>

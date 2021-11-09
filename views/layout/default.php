@@ -15,9 +15,9 @@
   </head>
 
   <body id="body" class="text-white">
-<nav class="z-10 h-8 text-white bg-gradient-to-l from-yellow-400 via-pink-500 to-red-600 filter saturate-150">
-  <br class="lg:hidden">
-  <ul id="scrollT" class="w-2/3 flex-col lg:flex-row hidden lg:flex">
+<nav class="z-10 h-8 text-white bg-gradient-to-b from-red-800 to-pink-500 filter saturate-150">
+  <div class="h-8 lg:hidden"></div>
+  <ul id="scrollT" class="w-2/3 flex-col hidden lg:flex lg:flex-row">
   <li class="hidden flex-1 lg:flex"><a class="hover:text-black text-2xl" href="/<?php echo WEBROOT2?>/accueil"><i class="fas fa-home"></i></a></li>
     <li class="flex-1"><a class="hover:text-black cursor-pointer" onclick="WindowOpen('2')">LINK 2 <i class="fas fa-sort-down"></i></a>
       <div id="scroll2" class="hidden">
@@ -35,7 +35,9 @@
       </div>
     </li>
     <li class="flex-1"><a class="hover:text-black cursor-pointer" onclick="WindowOpen('5')">LINK 5 <i class="fas fa-sort-down"></i></a>
-      <div id="scroll5" class="hidden">5</div>
+      <div id="scroll5" class="hidden">
+        <a href="/<?php echo WEBROOT2?>/exemples/test">Test</a><br>
+      </div>
     </li>
     </ul>
     <span class="absolute top-0 lg:hidden"><a class="hover:text-black text-2xl" href="/<?php echo WEBROOT2?>/accueil"><i class="fas fa-home"></i></a></span>
@@ -56,7 +58,7 @@
       <a class="h-full text-xl hover:text-black lg:hidden" onclick="Scroll()"><i class="fas fa-bars"></i></a>
     </span>
 </nav>
-  <div class="w-screen flex flex-col place-items-center bg-gradient-to-b from-blue-600 to-black lg:from-blue-500 lg:to-black">
+  <div class="bg-gradient-to-b from-blue-600 to-black">
 		<?php
       echo $content_for_layout;
 	   ?>
@@ -83,7 +85,7 @@ function WindowOpen(box){
 }
 function Scroll(){
   if (!testT){
-    document.getElementById("scrollT").className="flex-col lg:flex-row lg:flex bg-gradient-to-l from-yellow-400 via-pink-500 to-red-600"
+    document.getElementById("scrollT").className="z-50 flex-col lg:flex-row lg:flex bg-gradient-to-b from-pink-500 to-pink-300 border-b"
     testT=true
   }
   else{
