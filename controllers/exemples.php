@@ -120,5 +120,11 @@ function tableauformSubmit($action){
 	function test(){
 		$this->render('test');
 	}
+	function lexique($id){
+		$this->exemple->RangPlus($id);
+		$d["lex"]=$this->objet->getOneTable($id,"Lexique");
+		$this->set($d);
+		$this->render('lexique');
+	}
 }
 ?>

@@ -1,5 +1,5 @@
-<div class="flex flex-col justify-center text-center text-2xl h-screen">
-  <div class="text-5xl">Titre de la page</div><div class="h-4 lg:h-8"></div>
+<div class="flex flex-col justify-center place-items-center text-center lg:text-2xl h-screen">
+  <div class="text-2xl lg:text-5xl">Titre de la page</div><div class="h-4 lg:h-8"></div>
 <?php
 $d=array();
 foreach ($champs as $unCh) {
@@ -35,6 +35,7 @@ foreach ($champs as $unCh) {
   }
   echo "<br>";
   }
-//var_dump($_SESSION)
  ?>
+ <div class="h-4"></div>
+ <button type="button" onclick="window.location.href ='/<?php echo WEBROOT2?>/exemples/tableau';" class="py-1 w-32 border-2 border-yellow-300 rounded-md text-yellow-800 bg-opacity-75 hover:bg-yellow-300 hover:bg-opacity-100">Retour</button>
 </div>
